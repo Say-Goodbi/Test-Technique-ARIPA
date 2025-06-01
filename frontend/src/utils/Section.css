@@ -1,0 +1,21 @@
+.section {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 0.25rem;
+  cursor: pointer;
+  border-bottom: solid 2px teal;
+}
+
+.section-header:hover {
+  background-color: #e0e0e0;
+}
+
+.section-content {
+  padding: 1rem;
+  background-color: white;
+}

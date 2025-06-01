@@ -1,0 +1,110 @@
+/* Base styles for a pleasant and readable feel */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f3f7f4;
+  color: #2e3c2f;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+p {
+  margin: 0.5em 0;
+  color: #445c49;
+  font-size: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #2c4c36;
+  margin: 0.5em 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.Block {
+    align-items: center;
+    flex: vertical;
+    background-color: #ffffff;
+    border: 1px solid #cce3d3;
+    border-radius: 12px;
+    width: 90%;
+    padding: 1em 1.5em;
+    margin: 1em 2em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.Band {
+    align-items: center;
+    flex: vertical;
+    background-color: #ccc;
+    border-radius: 12px;
+    width: 80em;
+    margin: 2em 2em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* EntityPreview component */
+.EntityPreview {
+    flex: vertical;
+    background-color: #ffffff;
+    border: 1px solid #cce3d3;
+    border-radius: 12px;
+    width: 90%;
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.EntityPreview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.EntityPreview h2 {
+    margin: 0;
+}
+
+.info {
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    color: #5a7c66;
+    font-size: 0.95rem;
+}
+
+.searchbar {
+    margin-left: 4rem;
+    padding: '8px';
+    width: '50%';
+}
+
+a p,
+a h2 {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.lines {
+    margin-left: 10em;
+    width: 60em;
+}
+
+.boats {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
