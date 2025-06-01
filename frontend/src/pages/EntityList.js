@@ -33,9 +33,6 @@ export default function EntityList() {
     return (
         <div>
             <h2>Entités enregistrées : {entities?.list.length}</h2>
-            <Section title="Revenus de ventes par famille">
-                {entities?.chart && <PieChart data={entities.chart} Xvariable="name" />}
-            </Section>
             <Section title="Top ventes">
                 <div className="Block">
                     <ul className="header">

@@ -97,6 +97,10 @@ ul, ol {
   list-style: none;
 }
 
+.bulleted {
+    list-style: disc inside;
+}
+
 .lines {
     margin-left: 10em;
     width: 60em;
@@ -108,3 +112,16 @@ ul, ol {
     justify-content: space-between;
 }
 
+table {
+    margin-left: 9%;
+    width: 80%;
+    border: 2px solid teal;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+td {
+    text-align: center;
+}

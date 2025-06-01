@@ -85,9 +85,7 @@ export default function Entity() {
             <p>{entity?.description}</p>
             {/*<Section title="Produits phares">
                 <ul>
-                    <li>
                     // Produits phares (nom + % du total des revenus)
-                    </li>
                 </ul>
             </Section>*/}
             <Section title="Ventes et Achats">
@@ -104,7 +102,7 @@ export default function Entity() {
                         {entity?.boats.map(b => (<li><strong>{b.name}</strong><br />{b.fishing_type}</li>))}
                     </ul>
                 </div>
-                // Graphique bateaux chiffre d'affaire
+                // Graphique barres superposées / séléction bateaux chiffre d'affaire
             </Section>
             <Section title="Factures">
                 <ul>

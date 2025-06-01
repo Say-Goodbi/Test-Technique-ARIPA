@@ -94,9 +94,8 @@ router.get('/', async (req, res) => {
         const top_sales = await db.query("SELECT member_id, SUM(total_ttc) AS sum, name FROM bill INNER JOIN entity ON entity.entity_id = member_id GROUP BY member_id, name ORDER BY sum DESC LIMIT 5");
         const top_purchases = await db.query("SELECT buyer_id, SUM(total_ttc) AS sum, name FROM bill INNER JOIN entity ON entity.entity_id = buyer_id GROUP BY buyer_id, name ORDER BY sum DESC LIMIT 5");
         const total = await db.query("SELECT SUM(total_ttc) AS ttc FROM bill;");
-        const chart_data = await db.query("SELECT description AS name, SUM(total_ttc) AS value FROM bill INNER JOIN entity ON entity.entity_id = bill.member_id INNER JOIN family ON family.family_id = entity.family_id GROUP BY family.family_id ORDER BY family.family_id DESC;");
 
-        res.send({total_ttc: parseInt(total.rows[0].ttc, 10), chart: chart_data.rows, top_sales: top_sales.rows, top_purchases: top_purchases.rows, list: entities.rows});
+        res.send({total_ttc: parseInt(total.rows[0].ttc, 10), top_sales: top_sales.rows, top_purchases: top_purchases.rows, list: entities.rows});
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');

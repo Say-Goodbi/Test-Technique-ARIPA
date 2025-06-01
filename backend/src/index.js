@@ -5,6 +5,7 @@ const entityRoutes = require('./routes/entity');
 const billRoutes = require('./routes/bill');
 const fishRoutes = require('./routes/fish');
 const boatRoutes = require('./routes/boat');
+const statsRoutes = require('./routes/stats');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use('/entity', entityRoutes);
 app.use('/bill', billRoutes);
 app.use('/fish', fishRoutes);
 app.use('/boat', boatRoutes);
+app.use('/stats', statsRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
