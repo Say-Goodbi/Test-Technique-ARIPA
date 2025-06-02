@@ -4,6 +4,7 @@ import get from '../api.js'
 import Return from '../utils/Return';
 import Section from '../utils/Section';
 import LineChart from '../utils/LineChart';
+import BoatChart from './BoatChart';
 
 function BillPreview({ b }) {
     return (
@@ -97,12 +98,7 @@ export default function Entity() {
                 </div>
             </Section>
             <Section title="Bateaux">
-                <div className="Block">
-                    <ul className="boats">
-                        {entity?.boats.map(b => (<li><strong>{b.name}</strong><br />{b.fishing_type}</li>))}
-                    </ul>
-                </div>
-                // Graphique barres superposées / séléction bateaux chiffre d'affaire
+                {entity?.boats && <BoatChart boats={entity.boats}/>}
             </Section>
             <Section title="Factures">
                 <ul>

@@ -16,14 +16,16 @@ async function get_sells(member_id)
 {
     const bills = await db.query('SELECT bill.*, buyer.name AS buyer_name, seller.name AS seller_name FROM bill INNER JOIN entity AS seller ON seller.entity_id = bill.member_id INNER JOIN entity AS buyer ON buyer.entity_id = bill.buyer_id WHERE member_id = $1;', [member_id]);
 
-    return add_lines(bills.rows);
+    return bills.rows;
+//    return add_lines(bills.rows);
 }
 
 async function get_buys(buyer_id)
 {
     const bills = await db.query('SELECT bill.*, buyer.name AS buyer_name, seller.name AS seller_name FROM bill INNER JOIN entity AS seller ON seller.entity_id = bill.member_id INNER JOIN entity AS buyer ON buyer.entity_id = bill.buyer_id WHERE buyer_id = $1;', [buyer_id]);
 
-    return add_lines(bills.rows);
+    return bills.rows;
+//    return add_lines(bills.rows);
 }
 
 function merge_buys_and_sells(buys, sells)
@@ -75,7 +77,7 @@ router.get('/:id', async (req, res) => {
     const top_sellers = await db.query("SELECT seller.name, SUM(total_ttc) AS sum FROM bill INNER JOIN entity AS seller ON seller.entity_id = bill.member_id WHERE buyer_id = $1 GROUP BY member_id, seller.name ORDER BY sum DESC LIMIT 3;", [req.params.id]);
     const tot_sales = await db.query("SELECT SUM(total_ttc) FROM bill WHERE member_id = $1;", [req.params.id]);
     const tot_purchases = await db.query("SELECT SUM(total_ttc) FROM bill WHERE buyer_id = $1;", [req.params.id]);
-    
+
     const chart = get_chart_data(sells, buys);
 
     const sum_sales = tot_sales.rows[0].sum;
