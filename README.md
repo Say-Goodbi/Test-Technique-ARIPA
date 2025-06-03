@@ -13,7 +13,7 @@ Ce projet a pour but :
 - **ReactJS** : interface web pour afficher les résultats des analyses.
 
 ## 💻 Interprétation des Données
-N'ayant pas d'informations concernant la nature des données,
+N'ayant pas d'informations concernant la nature des données, et ne connaissant pas le domaine des armateurs,
 certaines analyses peuvent être erronées dû à l'interprétation que j'ai fait de celles-ci :
 
 - `member_id` : Correspond au **vendeur** sur une facture.
@@ -24,6 +24,11 @@ certaines analyses peuvent être erronées dû à l'interprétation que j'ai fai
 > À l'origine, je pensais utiliser les factures pour visualiser les chiffres d'affaire des entités par bateau. Cependant, le bateau sur chaque facture n'appartient pas forcément au "vendeur". 
 > Ainsi, les données concernant les revenus des bateaux / entités ne concordent pas.
 
+> [!NOTE]
+> Suivant cette logique, j'ai noté d'autres anomalies ou remarques :
+> - Des factures dont le `member_id` correspond au `buyer_id`. Notées dans une catégorie "Factures suspectes".
+> - Le circuit est fermé, donc les stats de ventes et achats sont gonflés par les reventes des entités entre elles, ne représentant donc pas la valeur produite réelle.
+> - Impossible de faire le poids au kg pếché par poisson, puisque les chaque ligne de facture ne dispose pas d'un poids.
 
 ## ⚙️ Installation & Lancement
 
