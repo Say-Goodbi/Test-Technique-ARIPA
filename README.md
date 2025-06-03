@@ -30,13 +30,17 @@ certaines analyses peuvent être erronées dû à l'interprétation que j'ai fai
 ### 1. Cloner le dépôt
 
 ```bash
-git clone <url-du-depot> LR-Test-Technique
+git clone git@github.com:Say-Goodbi/Test-Technique-ARIPA.git LR-Test-Technique
 cd LR-Test-Technique
 ```
 
 ### 2. Configuration des variables d’environnement
 
 Créer deux fichiers `.env` à partir des `env.example` fournis dans `frontend/` et `backend/`.
+
+
+> [!WARNING]
+> Il est nécessaire que les variables d'environnement permettent d'accéder à la base de données Postgres SQL donnée dans le sujet. 
 
 ### 3. Installation des dépendances
 
