@@ -36,7 +36,7 @@ cd LR-Test-Technique
 
 ### 2. Configuration des variables d’environnement
 
-Créer deux fichiers `.env` à partir des `env.example` fournis dans `frontend/` et `backend/`.
+Créer deux fichiers `.env` à partir des `.env.example` fournis dans `frontend/` et `backend/`.
 
 
 > [!WARNING]
